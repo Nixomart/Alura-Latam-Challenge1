@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <title>NICOLAS MARTINEZ - CHALLENGE 1</title>
 </head>
 <body>
-    <section style="display: flex;">
-        <div style="display: flex; flex-direction: column;">
-            <input id="inputText" placeholder="Ingrese texto aquí" type="text" style="width: 200px; height: 30px;">
-            <div style="display: flex;">
-                <button onclick="encriptartext()" style="width: 100px; height: 30px;">Encriptar</button>
+    <section class="section">
+        <div class="firstDiv">
+            <input id="inputText" class="inputDiv" placeholder="Ingrese texto aquí" type="text" >
+            <div class="divButtons">
+                <button onclick="encriptartext()" class="buttonEncript">Encriptar</button>
+                <button onclick="desencriptar()" class="buttonDes" >Desencriptar</button>
             </div>
-            <div id="resultt"></div>
-
+            <div class="divResult" id="resultt"></div>
         </div>
         <div style="display: inline-block;">
-            <img src="assets/Muñeco.png" alt="">
+        <!--     <img src="assets/Muñeco.png" alt=""> -->
         </div>
 </body>
 
 <script>
     function encriptartext() {
         let textt = document.getElementById('inputText').value;
-        let textEncrpp = textt.replace(/e/g, 'enter')
-                                   .replace(/i/g, 'imes')
-                                   .replace(/a/g, 'ai')
-                                   .replace(/o/g, 'ober')
-                                   .replace(/u/g, 'ufat');
+        let textEncrpp = textt.replace("e", 'enter')
+                                   .replace("i", 'imes')
+                                   .replace("a", 'ai')
+                                   .replace("o", 'ober')
+                                   .replace("u", 'ufat');
         document.getElementById('resultt').textContent = textEncrpp;
     }
-
+    function desencriptar() {
+        let textt = document.getElementById('inputText').value;
+        let textdesc = textt.replace(/enter/g, 'e')
+                                       .replace(/imes/g, 'i')
+                                       .replace(/ai/g, 'a')
+                                       .replace(/ober/g, 'o')
+                                       .replace(/ufat/g, 'u');
+        document.getElementById('resultt').textContent = textdesc;
+    }
 </script>
 </html>
